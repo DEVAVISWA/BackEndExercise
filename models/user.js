@@ -9,7 +9,13 @@ const userSchema= new mongoose.Schema({
         type : Date,
         default : Date.now()
     },
-    updatedAt : Date
+    updatedAt : Date,
+    notes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Note'
+        }
+    ]
 })
 
 //10 create a model for user
